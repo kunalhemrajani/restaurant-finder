@@ -22,7 +22,8 @@ config :restaurant_finder_web, RestaurantFinderWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "QkbA3UTEexI6+tUxZXQ5GFM+LM1Lnu+6lkox26HA92zp8/jE+9X3l5CoU0npXLlh",
   render_errors: [view: RestaurantFinderWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: RestaurantFinderWeb.PubSub, adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: RestaurantFinderWeb.PubSub, adapter: Phoenix.PubSub.PG2],
+  zomato_api: System.get_env("ZOMATO_API_KEY")
 
 # Configures Elixir's Logger
 config :logger, :console,

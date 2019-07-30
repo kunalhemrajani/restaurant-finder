@@ -20,7 +20,10 @@ defmodule RestaurantFinderWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", RestaurantFinderWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", RestaurantFinderWeb do
+    pipe_through :api
+
+    # Restaurants Endpoint
+    resources "/restaurants", RestaurantController, only: [:index, :show]
+  end
 end
